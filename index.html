@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Inspiration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="darkModeToggle">
+        <label for="darkModeToggle">Dark Mode (Beta)</label>
+    </div>
+
+    <main>
+        <section class="quote-section">
+            <div class="quote-box">
+                <p id="quote">"Your daily inspiration quote will appear here."</p>
+            </div>
+            <button class="inspire-btn" onclick="getNewQuote()">Get Inspired</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Daily Inspiration Hub. All rights reserved.</p>
+    </footer>
+    <!-- Add this at the bottom of your body tag -->
+<div class="creator-btn-container">
+    <button class="creator-btn">Made by Ayaan</button>
+    <div class="about-me-box">
+        <p>Hi! I'm Ayaan, a passionate web developer and Minecraft PvP expert. I love creating cool websites and playing games. Thanks for visiting!</p>
+    </div>
+</div>
+
+<style>
+    .creator-btn-container {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .creator-btn {
+        background-color: grey;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .creator-btn:hover {
+        background-color: darkgrey;
+        transform: scale(1.05);
+    }
+
+    .about-me-box {
+        display: none;
+        position: absolute;
+        top: -120px;
+        right: 0;
+        width: 0;
+        max-width: 250px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease, width 0.5s ease;
+        transform: translateY(10px);
+        font-size: 12px;
+        overflow: hidden;
+    }
+
+    .creator-btn-container:hover .about-me-box {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+        width: 250px;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode .about-me-box {
+        background-color: rgba(50, 50, 50, 0.9);
+    }
+</style>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
